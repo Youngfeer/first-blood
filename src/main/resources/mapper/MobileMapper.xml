@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.xiaofei.dao.MobileDao">
+    <select id="findById" parameterType="int" resultType="com.xiaofei.entity.Mobile">
+        select * from mobile where id=#{id}
+    </select>
+    <select id="getAllMobile" resultType="com.xiaofei.entity.Mobile">
+        select * from mobile
+    </select>
+
+    <insert id="addMobile" parameterType="com.xiaofei.entity.Mobile">
+        INSERT into mobile(os, mName, operSystem) values(#{os}, #{mName}, #{operSystem})
+    </insert>
+
+    <update id="borrowMobile" parameterType="int">
+
+        UPDATE mobile set userId = #{userId} where id = #{id}
+    </update>
+</mapper>
