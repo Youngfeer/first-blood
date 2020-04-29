@@ -15,6 +15,10 @@
 
     <update id="borrowMobile" parameterType="int">
 
-        UPDATE mobile set userId = #{userId} where id = #{id}
+        UPDATE mobile set userId = #{userId}, status = 1 where id = #{id}
+    </update>
+    <update id="returnMobile" parameterType="int">
+
+        UPDATE mobile set status = 2 where id = #{id}
     </update>
 </mapper>

@@ -12,35 +12,44 @@ public class User implements Serializable{
     private String password;
 
     private String shotName;
+    private String salt;
 
-    public String getName() {
+    public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public String getShotName() {
-        return shotName;
-    }
-
-    public void setName(String name) {
-        this.username = name;
-    }
-
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getShotName() {
+        return shotName;
     }
 
     public void setShotName(String shotName) {
         this.shotName = shotName;
     }
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "name='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", shotName='" + shotName + '\'' +
                 '}';

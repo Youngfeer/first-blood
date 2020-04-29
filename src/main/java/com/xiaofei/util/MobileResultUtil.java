@@ -14,10 +14,25 @@ public class MobileResultUtil {
 
     }
 
+    public static MobileResult successMsg(String message){
+        MobileResult mobileResult = new MobileResult();
+        mobileResult.setStatus(ResultEnum.Success.getCode());
+        mobileResult.setMsg(message);
+        return mobileResult;
+
+    }
+
     public static MobileResult fail(){
         MobileResult mobileResult = new MobileResult();
         mobileResult.setStatus(ResultEnum.Fail.getCode());
         mobileResult.setMsg(ResultEnum.Fail.getMessage());
+        return mobileResult;
+
+    }
+    public static MobileResult failMsg(String message){
+        MobileResult mobileResult = new MobileResult();
+        mobileResult.setStatus(ResultEnum.Fail.getCode());
+        mobileResult.setMsg(message);
         return mobileResult;
 
     }

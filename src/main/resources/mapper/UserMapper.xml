@@ -5,4 +5,7 @@
     <select id="findByName" parameterType="string" resultType="com.xiaofei.entity.User">
         select * from user where username=#{userName}
     </select>
+    <insert id="addUser" parameterType="com.xiaofei.entity.User">
+        insert into user(username, password, shotname, salt) values(#{username}, #{password}, #{shotName}, #{salt})
+    </insert>
 </mapper>

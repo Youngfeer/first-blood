@@ -11,7 +11,7 @@ public class Mobile implements Serializable{
     private String mName;
     private String operSystem;
     private int userId;
-    private String status;
+    private int status;
 
     public int getId() {
         return id;
@@ -54,11 +54,11 @@ public class Mobile implements Serializable{
         return userId;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

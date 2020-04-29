@@ -21,7 +21,7 @@ public class FirstNameServiceImpl implements FirstNameService{
         if(user == null){
             return "请检查用户名是否正确";
         }else{
-            return user.getName().toString();
+            return user.getUsername().toString();
         }
 
 

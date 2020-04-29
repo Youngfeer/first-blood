@@ -33,23 +33,9 @@ public class MobileController {
         return mr;
     }
 
-    @RequestMapping("borrow")
+    @PostMapping("borrow")
     public  MobileResult borrowMobile(@RequestParam(value = "userId") int userId, @RequestParam(value = "id") int id){
-        MobileResultUtil mobileResult = new MobileResultUtil();
-        Mobile mobile = mobileService.findById(id);
-        if(mobile.getStatus().equals("borrowed")){
-
-        }
-        boolean borrowM = mobileService.borrowMobile(userId, id);
-
-        if(borrowM){
-            logger.info("成功借走手机");
-            return mobileResult.success(borrowM);
-
-        }else{
-            return mobileResult.fail();
-        }
-
+        return mobileService.borrowMobile(userId, id);
 
     }
 
@@ -69,6 +55,12 @@ public class MobileController {
         }
         return mr;
 
+    }
+
+    @PostMapping("return")
+    public MobileResult returnMobile(@RequestParam(value = "id") int id){
+
+        return mobileService.returnMobile(id);
     }
 
 }

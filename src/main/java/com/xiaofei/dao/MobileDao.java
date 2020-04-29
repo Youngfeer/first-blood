@@ -14,5 +14,6 @@ public interface MobileDao {
     public Mobile findById(int id);
     public List<Mobile> getAllMobile();
     public boolean addMobile(Mobile mobile);
-    public boolean borrowMobile(@Param(value = "userId") int userId, @Param(value = "id")int id);
+    public int borrowMobile(@Param(value = "userId") int userId, @Param(value = "id")int id);
+    public int returnMobile(@Param(value = "id") int id);
 }

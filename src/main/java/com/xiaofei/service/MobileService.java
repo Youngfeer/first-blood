@@ -1,6 +1,7 @@
 package com.xiaofei.service;
 
 import com.xiaofei.entity.Mobile;
+import com.xiaofei.entity.User;
 import com.xiaofei.util.MobileResult;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public interface MobileService {
 
     public List<Mobile> getAllMobile();
     public boolean addMobile(Mobile mobile);
-    public boolean borrowMobile(int userId, int id);
+    public MobileResult borrowMobile(int userId, int id);
     public Mobile findById(int id);
+    public MobileResult returnMobile(int id);
 }
